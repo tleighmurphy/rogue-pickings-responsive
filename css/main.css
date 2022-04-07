@@ -8,7 +8,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
+
+	/*??flex-flow: row wrap;*/
 }
 
 .container{
@@ -41,16 +42,21 @@ h3 {
 p {
 	font-size: .875em;
 	line-height: 21px;
-    padding: 0 30px;
+    /*padding: 0 30px;*/
+}
+
+/*did I delete this margin? was not in my starter code*/
+ul {
+	margin: 0;
 }
 
 /*The widths are in a percentage!*/
 header {
 	
-	max-width: 1200px;
+	border-bottom: 3px solid #77a466;
+	width: 100%;
 
-	border-bottom: 30px solid #77a466;
-	width: 90%;
+	text-align: center;
 
 	display: flex;
 	justify-content: center;
@@ -61,15 +67,20 @@ header {
 header h1 {
 	
 	margin: 0; 
-	padding: 38px 0;
+	padding: 38px 20px 20px 20px;
+
+	border-bottom: 3px solid #77a466;
+	width: 100%;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
 	
-	padding: 46px 0;
+	padding: 20px 0;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -80,8 +91,13 @@ header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: .875em;
-	padding: 0 10px;
-	display: inline;
+	padding: 10px 0;
+	display: block;
+
+	/* OR???
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;*/
 }
 header nav ul li a{
 	text-decoration: none;
@@ -89,11 +105,15 @@ header nav ul li a{
 }
 
 /*The widths are in a percentage!*/
+
+/*** this section has problems!! ***/
+
 .top-section,
 .bottom-section {
-	/*margin: 0 auto;*/
+	/*margin: 0 auto;
 
-	width: 90%;
+	width: 90%;*/
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -101,18 +121,11 @@ header nav ul li a{
 	
 }
 
-.main-image {
-
-}
-
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
 }
 
-.main-title {
-	
-}
 .main-title h2 {
 	text-align: left;
 	padding: 5px 0;
@@ -121,21 +134,17 @@ header nav ul li a{
 .main-title p {
 	padding: 0;
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 1.5625;
 }
 
 .section-one,
 .section-two,
 .section-three {
 
-	width: 30%;
-	justify-content: center;
-	align-items: center;
-	
-
+	width: 100%;
 	border-top: 1px solid #eee;
 }
-
+/* does all this come out???
 .section-one h3 {
 	padding: 10px 0;
 }
@@ -150,6 +159,8 @@ header nav ul li a{
 	padding: 10px 30px;
 }
 
+/**** end of problem section ***/
+
 .menu {
 	list-style: none;
 	padding: 0;
@@ -162,21 +173,23 @@ header nav ul li a{
 .reviews {
 	color: #333;
 	font-size: 1em;
-	line-height: 21px;
+	line-height: 1.3125;
 }
 
 .address {
 	font-size: 1em;
-	line-height: 24px;
+	line-height: 1.5;
 }
 
 /*The widths are in a percentage!*/
 footer {
 	
 	border-top: 3px solid #eee;
-	/*margin: 0 auto;*/
+	
+	/*does margin come out? 
+	margin: 0 auto; */
 
-	width: 90%;
+	width: 100%;
 	text-align: center;
 
 	display: flex;
@@ -190,3 +203,66 @@ footer span {
 	color: #77a466;
 	font-size: .875em;
 }
+
+/**** NEXT STEPS **/
+
+
+@media all and (min-width: 768px) {
+
+	/* Tablet styles here */
+
+	.bottom-section {
+		justify-content: space-between;
+		align-items: flex-start;
+		border-top: 1px solid #eee;
+
+	}
+
+	.section-one {
+		border-top: none;
+		
+		flex-basis: 30%;
+
+	}
+
+	.section-two {
+		border-top: none;
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+		padding: 0 20px;
+
+		flex-basis: 30%;
+
+	}
+
+	.section-three {
+		border-top: none;
+		
+		flex-basis: 30%;
+
+	}
+}
+
+
+@media all and (min-width: 1200px) {
+
+	/* Desktop styles here */
+	header {
+		justify-content: space-between;
+	}
+header h1{
+	width: 30%;
+	padding: 0;
+	border-bottom: none;
+	text-align: left;
+}
+header nav {
+	width: 40%;
+}
+
+header nav ul{
+	display: flex;
+	justify-content: space-between;
+	}
+}
+
